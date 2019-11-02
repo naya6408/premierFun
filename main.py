@@ -1,5 +1,6 @@
 import requests as re 
-import seaborn as sb 
+import matplotlib.pyplot as plt
+import seaborn as sns
 import json
 import pandas as pd 
 from pandas.io.json import json_normalize
@@ -25,10 +26,18 @@ eplTable = json_normalize(response)
 columnTitles= ["position", "teamname", "wins", "losses", "draws", "goalsscored", "goalsreceived", "matchesplayed"]
 
 print("type of the epltable is ", type(eplTable))
-
+sns.set(style="darkgrid")
 eplTable = eplTable.reindex(columns = columnTitles)
-
 print("Repositioned table looks like: \n", eplTable)
+
+sns_plot = sns.scatterplot(x='wins', y='losses',legend="brief" ,hue = 'teamname', data = eplTable)
+pos = sns_plot.get_position()
+sns_plot.set_position([pos.x0, pos.y0, pos.width * 0.85, pos.height])
+
+sns_plot.legend(loc='center right', bbox_to_anchor=(1.25, 0.5), ncol=1)
+
+plt.show()
+
 
 
 
