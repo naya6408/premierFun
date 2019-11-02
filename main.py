@@ -38,9 +38,8 @@ sns_plot.set_position([pos.x0, pos.y0, pos.width * 0.85, pos.height])
 
 sns_plot.legend(loc='center right', bbox_to_anchor=(1.25, 0.5), ncol=1)
 
-plt.show()
 plt.savefig("output.png")
-
+plt.show()
 
 
 
