@@ -2,6 +2,7 @@ import requests as re
 import seaborn as sb 
 import json
 import pandas as pd 
+from pandas.io.json import json_normalize
 
 # def compareStats(teamOne, teamTwo):
 
@@ -19,28 +20,15 @@ data = []
 teamList = []
 outputdict = {}
 
-for i in range(len(response)):
-	for key,value in response[i].items():
-		if(key == "teamname"):
-			teamList.append(value)
+eplTable = json_normalize(response)
 
-print(json.dumps(response, sort_keys=True, indent=4))
+columnTitles= ["position", "teamname", "wins", "losses", "draws", "goalsscored", "goalsreceived", "matchesplayed"]
 
+print("type of the epltable is ", type(eplTable))
 
-df = pd.DataFrame(teamList)
-df.columns = ["Team Name"]
-print("Data Frame containing list of teams is  \n", df)
+eplTable = eplTable.reindex(columns = columnTitles)
 
-
-
-
-
-
-
-
-
-
-
+print("Repositioned table looks like: \n", eplTable)
 
 
 
