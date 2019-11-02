@@ -19,7 +19,7 @@ response = response.json()
 data = []
 teamList = []
 outputdict = {}
-figDimensions = (8.0, 8.0)
+figDimensions = (10.7, 10.7)
 
 eplTable = json_normalize(response)
 
