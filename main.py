@@ -26,21 +26,19 @@ eplTable = json_normalize(response)
 columnTitles= ["position", "teamname", "wins", "losses", "draws", "goalsscored", "goalsreceived", "matchesplayed"]
 
 print("type of the epltable is ", type(eplTable))
-sns.set(style="darkgrid")
-eplTable = eplTable.reindex(columns = columnTitles)
-print("Repositioned table looks like: \n", eplTable)
+sns.set(style="darkgrid") # adding dark theme
+eplTable = eplTable.reindex(columns = columnTitles) # re grouping the columns 
+print("Repositioned table looks like: \n", eplTable) # print what it looks like 
 
-fig,ax = plt.subplots(figsize=figDimensions)
+fig,ax = plt.subplots(figsize=figDimensions) #rescale the plot size
 
-sns_plot = sns.scatterplot(ax=ax, x='wins', y='losses',legend="brief" ,hue = 'teamname', data = eplTable)
-pos = sns_plot.get_position()
-sns_plot.set_position([pos.x0, pos.y0, pos.width * 0.85, pos.height])
+sns_plot = sns.scatterplot(ax=ax, x='wins', y='losses',legend="brief" ,hue = 'teamname', data = eplTable) # create a seaborn scatterplot
+pos = sns_plot.get_position() # get current position 
+sns_plot.set_position([pos.x0, pos.y0, pos.width * 0.85, pos.height]) #set new ploistion 
 
-sns_plot.legend(loc='center right', bbox_to_anchor=(1.25, 0.5), ncol=1)
-
-plt.legend(loc=1, prop={'size':7.5})
-plt.savefig("output.png")
-plt.show()
+plt.legend(loc=1, prop={'size':7.5}) # legend location 
+plt.savefig("output.png") # output into a file 
+plt.show() # show the plot 
 
 
 
