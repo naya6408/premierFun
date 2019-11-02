@@ -5,7 +5,6 @@ import json
 import pandas as pd 
 from pandas.io.json import json_normalize
 
-# def compareStats(teamOne, teamTwo):
 
 url = "https://sportdata.p.rapidapi.com/api/v1/free/soccer/standings/premier-league"
 
@@ -37,6 +36,7 @@ sns_plot.set_position([pos.x0, pos.y0, pos.width * 0.85, pos.height])
 sns_plot.legend(loc='center right', bbox_to_anchor=(1.25, 0.5), ncol=1)
 
 plt.show()
+plt.savefig("output.png")
 
 
 
