@@ -28,8 +28,8 @@ print(json.dumps(response, sort_keys=True, indent=4))
 
 
 df = pd.DataFrame(teamList)
-print("data is:", data)
-print("Data Frame containing list of teams is", df)
+df.columns = ["Team Name"]
+print("Data Frame containing list of teams is  \n", df)
 
 
 
