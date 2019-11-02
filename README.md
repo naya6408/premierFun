@@ -10,4 +10,5 @@ this will be re usuble as long as the user innputs the data into a json format
 
 Here is an image of Win-Loss Graph for each teams 
 ![win-loss ratio graph epl](output.png)
+
 Showing that the strenght of the team goes up as it reaches upper left corner of the graph
