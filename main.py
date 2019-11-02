@@ -19,7 +19,7 @@ response = response.json()
 data = []
 teamList = []
 outputdict = {}
-figDimensions = (8.5, 8.5)
+figDimensions = (8.5, 6.5)
 
 eplTable = json_normalize(response)
 
@@ -38,6 +38,7 @@ sns_plot.set_position([pos.x0, pos.y0, pos.width * 0.85, pos.height])
 
 sns_plot.legend(loc='center right', bbox_to_anchor=(1.25, 0.5), ncol=1)
 
+plt.legend(loc=1, prop={'size':7.5})
 plt.savefig("output.png")
 plt.show()
 
