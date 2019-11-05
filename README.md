@@ -1,4 +1,4 @@
-# premierFun
+<h1>premierFun</h1>
 
 Welcome to Premier Fun, where we will play around with 
 Python pandas and seaborn library to create some beautiful 
