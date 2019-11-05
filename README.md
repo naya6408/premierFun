@@ -1,6 +1,6 @@
 <h1>premierFun</h1>
 
-Welcome to Premier Fun, where we will play around with 
+Welcome to **Premier Fun**, where we will play around with 
 Python pandas and seaborn library to create some beautiful 
 Data Visualization using the Premier League Data
 due to the legal restrictions, we cannot obtain the actual data for 
