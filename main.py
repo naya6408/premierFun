@@ -5,18 +5,23 @@ import json
 import pandas as pd 
 from pandas.io.json import json_normalize
 
+print("--------------------------------------------------------------------")
+print(" Welcome to Premier League Fun developed by Ryan Lee")
+print("Here are the options. Enter 1 for season stats")
+arg1 = input("Enter")
+
 
 url = "https://sportdata.p.rapidapi.com/api/v1/free/soccer/standings/premier-league"
 
-headers = {
+headers = { #Api id and token 
 	'x-rapidapi-host': "sportdata.p.rapidapi.com",
 	'x-rapidapi-key': "8ed5762f77msh184b3093218aeddp1cd8a4jsn6c675ec1a175"
 }
 
-response = re.get(url, headers=headers)
-response = response.json()
+response = re.get(url, headers=headers) # getting the json response using the rapiduri
+response = response.json() # putting the response in the json format 
 
-data = []
+data = [] 
 teamList = []
 outputdict = {}
 figDimensions = (8.5, 6.5)
@@ -40,6 +45,9 @@ plt.legend(loc=1, prop={'size':7.5}) # legend location
 plt.savefig("output.png") # output into a file 
 plt.show() # show the plot 
 
+
+
+# will add new analysis here... adding predictions for the future using the current data
 
 
 
